@@ -4,15 +4,13 @@ Node.js + TypeScript playground for building chat features on top of the [OpenAI
 
 ## Tech Stack
 
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
-![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)
-![LangGraph](https://img.shields.io/badge/LangGraph-1C3C3C?style=for-the-badge)
-![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)
-![DALL·E](https://img.shields.io/badge/DALL·E-412991?style=for-the-badge&logo=openai&logoColor=white)
-![OpenAI Tools & Functions](https://img.shields.io/badge/Tools%20%26%20Functions-412991?style=for-the-badge)
-![Embeddings](https://img.shields.io/badge/Embeddings-412991?style=for-the-badge)
+<p>
+  <img src="https://cdn.simpleicons.org/nodedotjs" alt="Node.js" width="48" height="48" />
+  <img src="https://cdn.simpleicons.org/typescript" alt="TypeScript" width="48" height="48" />
+  <img src="https://cdn.simpleicons.org/langchain" alt="LangChain" width="48" height="48" />
+  <img src="https://cdn.simpleicons.org/langgraph" alt="LangGraph" width="48" height="48" />
+  <img src="https://cdn.simpleicons.org/huggingface" alt="Hugging Face" width="48" height="48" />
+</p>
 
 ## Repo structure
 
