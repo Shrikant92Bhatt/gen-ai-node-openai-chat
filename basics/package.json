@@ -1,0 +1,20 @@
+{
+  "name": "chat-bot",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node -r ts-node/register --enable-source-maps --env-file .env src/index.ts"
+  },
+  "dependencies": {
+    "openai": "^6.49.0",
+    "tiktoken": "^1.0.22"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.5.0"
+  }
+}
