@@ -2,6 +2,18 @@
 
 Node.js + TypeScript playground for building chat features on top of the [OpenAI API](https://platform.openai.com/docs/api-reference) — starting from a single completion call, then layering on token-aware context management and function/tool calling.
 
+## Tech Stack
+
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
+![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)
+![LangGraph](https://img.shields.io/badge/LangGraph-1C3C3C?style=for-the-badge)
+![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)
+![DALL·E](https://img.shields.io/badge/DALL·E-412991?style=for-the-badge&logo=openai&logoColor=white)
+![OpenAI Tools & Functions](https://img.shields.io/badge/Tools%20%26%20Functions-412991?style=for-the-badge)
+![Embeddings](https://img.shields.io/badge/Embeddings-412991?style=for-the-badge)
+
 ## Repo structure
 
 ```
