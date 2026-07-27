@@ -11,6 +11,12 @@ Node.js + TypeScript playground for building chat features on top of the [OpenAI
   <img src="https://cdn.simpleicons.org/langgraph" alt="LangGraph" width="48" height="48" />
   <img src="https://cdn.simpleicons.org/huggingface" alt="Hugging Face" width="48" height="48" />
 </p>
+<p>
+  <img src="https://img.shields.io/badge/OpenAI%20API-412991?style=flat-square" alt="OpenAI API" />
+  <img src="https://img.shields.io/badge/DALL·E-412991?style=flat-square" alt="DALL·E" />
+  <img src="https://img.shields.io/badge/Function%20%2F%20Tool%20Calling-412991?style=flat-square" alt="Function / Tool Calling" />
+  <img src="https://img.shields.io/badge/Embeddings-412991?style=flat-square" alt="Embeddings" />
+</p>
 
 ## Repo structure
 
