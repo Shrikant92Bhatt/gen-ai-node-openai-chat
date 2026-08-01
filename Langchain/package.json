@@ -1,0 +1,28 @@
+{
+  "name": "Langchain",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node --enable-source-maps --env-file .env src/index.ts"
+  },
+  "dependencies": {
+    "@chroma-core/default-embed": "^0.1.9",
+    "@chroma-core/openai": "^0.1.10",
+    "@langchain/community": "^1.1.29",
+    "@langchain/core": "^1.2.4",
+    "@langchain/openai": "^1.5.5",
+    "cheerio": "^1.2.0",
+    "chromadb": "^3.5.0",
+    "chromadb-default-embed": "^2.14.0",
+    "langchain": "^1.5.4",
+    "pdf-parse": "^2.4.5"
+  },
+  "devDependencies": {
+    "@langchain/textsplitters": "^1.0.1",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0"
+  }
+}
