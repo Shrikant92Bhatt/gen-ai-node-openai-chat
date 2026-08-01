@@ -6,13 +6,11 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "start": "node --enable-source-maps --env-file .env src/index.ts",
-    "chroma:up": "docker compose up -d",
-    "chroma:down": "docker compose down"
+    "start": "node --enable-source-maps --env-file .env src/index.ts"
   },
   "dependencies": {
-    "chromadb": "^1.9.4",
-    "openai": "^6.49.0"
+    "@chroma-core/default-embed": "^0.1.8",
+    "chromadb": "^1.9.4"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
