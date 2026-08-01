@@ -1,5 +1,5 @@
 import { OpenAI } from "openai";
-import { optimizeContext } from "./context.ts";
+import { optimizeContext } from "./context";
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 

@@ -1,6 +1,6 @@
 # Gen AI Node OpenAI Chat
 
-Node.js + TypeScript playground for building chat features on top of the [OpenAI API](https://platform.openai.com/docs/api-reference) — starting from a single completion call, then layering on token-aware context management and function/tool calling.
+Node.js + TypeScript playground for building chat features on top of the [OpenAI API](https://platform.openai.com/docs/api-reference) — starting from a single completion call, then layering on token-aware context management, function/tool calling, and image generation.
 
 ## Tech Stack
 
@@ -23,24 +23,25 @@ Node.js + TypeScript playground for building chat features on top of the [OpenAI
 ```
 .
 ├── basics/      Minimal single-file example: one-shot completion + token counting
-└── chat_app/    Interactive chat with context optimization and tool calling
-    ├── src/basic_chat/   Interactive stdin chatbot with bounded context
-    └── src/Project/      Function/tool-calling example (order status lookup)
+├── chat_app/    Interactive chat with context optimization and tool calling
+│   ├── src/basic_chat/   Interactive stdin chatbot with bounded context
+│   └── src/Project/      Function/tool-calling example (order status lookup)
+└── dall_e/      Image generation with DALL·E 3 (prompt in, PNG saved to disk)
 ```
 
 Each project is independent — its own `package.json`, `tsconfig.json`, and `.env`.
 
 ## Prerequisites
 
-- Node.js 22.6+ (tested on v24). Both projects run TypeScript source files directly via Node's built-in TypeScript support — no separate compile step needed for `npm start`.
+- Node.js 22.6+ (tested on v24). All projects run TypeScript source files directly via Node's built-in TypeScript support — no separate compile step needed for `npm start`.
 - An [OpenAI API key](https://platform.openai.com/api-keys).
 
 ## Setup
 
-For each project (`basics/` and `chat_app/`):
+For each project (`basics/`, `chat_app/`, and `dall_e/`):
 
 ```bash
-cd basics   # or chat_app
+cd basics   # or chat_app, or dall_e
 npm install
 ```
 
@@ -50,7 +51,7 @@ Create a `.env` file in that project's folder with your key:
 OPENAI_API_KEY=sk-...
 ```
 
-`.env` is git-ignored in both projects — never commit real keys.
+`.env` is git-ignored in every project — never commit real keys.
 
 ## basics/
 
@@ -103,10 +104,32 @@ npm start
 
 `chat_app` runs TypeScript directly via Node's native (unflagged, Node 22.6+/23.6+) type-stripping support — there's no bundler or loader resolving imports at runtime. That means relative imports must reference the file's real extension (`./context.ts`, not `./context.js` or extension-less) — an IDE's "organize imports" or auto-import may try to strip this; if `npm start` suddenly can't resolve a module, check the import extension first.
 
+## dall_e/
+
+A single file (`src/index.ts`) that turns a text prompt into an image with [DALL·E 3](https://platform.openai.com/docs/guides/images) and writes the PNG to `images/` (git-ignored), named with a timestamp plus a slug of the prompt.
+
+Two ways to run it:
+
+```bash
+cd dall_e
+
+# One-shot
+npm start -- "a red panda coding at night, watercolor"
+
+# Interactive — describe an image and press Enter, "exit" to quit
+npm start
+```
+
+Details worth knowing:
+- Requests use `response_format: "b64_json"` rather than a URL — the returned URLs expire after about an hour, and the base64 payload skips a second round trip to download the bytes.
+- DALL·E 3 rewrites every prompt before rendering it. The script prints the returned `revised_prompt` so you can see what the model actually drew and iterate on that.
+- `n` must be `1` for DALL·E 3, and the only accepted sizes are `1024x1024`, `1792x1024`, and `1024x1792`. Size, `quality` (`standard`/`hd`), and `style` (`vivid`/`natural`) are constants at the top of the file.
+- Content-policy rejections and rate limits are caught per request, so the interactive loop survives a rejected prompt instead of exiting.
+
 ## Notes
 
 - Models differ in supported parameters — e.g. reasoning models like `gpt-5-mini` require `max_completion_tokens` instead of the legacy `max_tokens`, and reasoning tokens count against that same budget (leave headroom or the response can come back empty).
-- Both projects use ESM (`"type": "module"` in `package.json`).
+- All three projects use ESM (`"type": "module"` in `package.json`).
 
 ## License
 
