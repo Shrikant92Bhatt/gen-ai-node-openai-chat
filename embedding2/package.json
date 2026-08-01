@@ -1,0 +1,21 @@
+{
+  "name": "embedding2",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node --enable-source-maps --env-file .env src/index.ts",
+    "chroma:up": "docker compose up -d",
+    "chroma:down": "docker compose down"
+  },
+  "dependencies": {
+    "chromadb": "^1.9.4",
+    "openai": "^6.49.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0"
+  }
+}
