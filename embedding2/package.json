@@ -7,11 +7,13 @@
   "scripts": {
     "build": "tsc",
     "start": "node --enable-source-maps --env-file .env src/index.ts",
-    "db:start": "docker compose up -d"
+    "db:start": "docker compose up -d",
+    "db:start:local": "chroma run --path ./chroma_data --port 8000"
   },
   "dependencies": {
     "@chroma-core/default-embed": "^0.1.8",
-    "chromadb": "^1.9.4"
+    "chromadb": "^1.9.4",
+    "chromadb-default-embed": "^2.14.0"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

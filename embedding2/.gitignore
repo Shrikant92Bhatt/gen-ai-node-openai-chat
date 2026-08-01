@@ -1,5 +1,6 @@
 node_modules/
 dist/
+chroma_data/
 .env
 images/
 .DS_Store
