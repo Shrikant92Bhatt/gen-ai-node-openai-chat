@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "start": "node --enable-source-maps --env-file .env src/index.ts"
+    "start": "node --enable-source-maps --env-file .env src/index.ts",
+    "db:start": "docker compose up -d"
   },
   "dependencies": {
     "@chroma-core/default-embed": "^0.1.8",
