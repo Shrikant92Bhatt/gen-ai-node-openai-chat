@@ -1,7 +1,7 @@
 import { fileURLToPath } from "url";
-import { ChromaClient } from "chromadb";
+import { CloudClient } from "chromadb";
 
-const client = new ChromaClient();
+const client = new CloudClient();
 
 export async function run(): Promise<void> {
     const collection = await client.getOrCreateCollection({ name: "my_collection" });
